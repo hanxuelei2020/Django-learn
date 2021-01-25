@@ -1,0 +1,87 @@
+首先使用
+pip install virtualenv
+pip install virtualenvwrapper
+mkvirtualenv 虚拟环境名
+workon 查看虚拟环境
+workon [虚拟环境名] 切换虚拟环境名
+pip install Django == version
+rmvirtualenv 虚拟环境名
+
+Django的使用
+Django-admin.py startproject 项目名
+Python manage.py startapp App名称
+
+Model层
+类必须继承models.Model
+属性与字段对应
+models.AutoField	默认会生成一个名为id的字段并未int类型
+models.CharField	字符串类型
+models.BooleanField	布尔类型
+models.ComaSeparatedIntegerField	用逗号分隔的整数类型
+models.DateField　　　　　　	日期（Date）类型
+models.DateTimeField　　	日期（datetime）类型
+models.DecimalField　　	十进制小数类型
+models.EmailField	字符串类型（正则表达式邮箱）
+models.FloatField　　	浮点类型
+models.IntegerField	整数类型
+models.BigIntegerField	长整数类型
+models。IPAddressField	字符串类型（IPV4正则表达式）
+models.GenericIPAddressField
+字符串类型， 参数protocol 可以是: both 、IPv4 和
+ipv6 ， 验证IP地址
+
+models.NullBooleanField　　	允许为空的布尔类型
+models.PositivelntegerFiel	正整数的整数类型
+models.PositiveSmallIntegerField	小正整数类型
+models.SlugField
+包含字母、数字、下曲线和连字符的字符串， 常用于
+URL
+
+models.SmaIlIntegerField	小整数类型， 取值范围C -32,768---+32,767 )
+models.TextField	长文本类型
+models. TimeField	时间类型， 显东时分秒HH:MM[:ss[ .uuuuuu]]
+models. URLField	字符串， 地址为正则表达式
+models.B inary F ield	二进制数据类型
+
+创建迁移文件
+Python manage.py makemigrations
+python manage.py migrate
+
+后台管理
+1 . 本地化
+# LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hans'
+
+# TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
+
+2 . 创建管理员
+python manage.py createsuperuser
+
+3. 启动
+python manage.py runserver ip:port
+
+4 . 注册模型类
+admin.site.register(实体类)
+也可以自定义模型管理类
+
+
+视图函数
+视图函数必须一个request参数
+进行url配置
+通过url函数设置url路由配置项
+eg :
+     path('admin/', admin.site.urls),
+    # path('index/', views.index),
+    re_pat|h(r'^', include('HelloWorld.urls'))
+
+使用模板文件
+1. 加载模板文件
+2. 定义模板上下文
+3. 模板渲染
+
+
+
+
+
+
